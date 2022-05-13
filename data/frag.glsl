@@ -1,16 +1,21 @@
-
 #define PROCESSING_COLOR_SHADER
 #ifdef GL_ES
 precision highp float;
 #endif
 
 // uniforms
-uniform vec2 resolution;
 uniform float time;
+uniform vec3 mouse;
+uniform vec2 resolution;
+
 const float scale = 3.1;
+
 
 void main() {
   // normalize
+  float t = time;
+  vec2 m = (mouse.xy/resolution.xy);
   vec2 p = (gl_FragCoord.xy/resolution.xy);
-  gl_FragColor = vec4(abs(sin((p.x + time) * scale)), abs(cos((p.y + time) * scale)), abs(tan((p.x+p.y+time) * scale)), 1.0);
+  vec3 color = vec3(distance(p, m));
+  gl_FragColor = vec4(sin(color), 1.0);
 }

@@ -98,4 +98,16 @@ class Uniform<T> {
         break;
     }
   }
+
+  // print out data structure for debugging
+  void print() {
+    println("Uniform "+name+":");
+    println("- val    : "+val);
+    println("- type   : "+type);
+    println("- update : "+update_flag);
+    if (update_flag) {
+      println("- func   : "+update_function);
+    }
+    println("----------------");
+  }
 }
