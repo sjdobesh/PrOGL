@@ -56,9 +56,6 @@ class Uniform<T> {
 
   // set this uniform within a given program
   void set_uniform(PShader program) {
-    println("Setting uniform: "+ name);
-    println("val: "+ val);
-    println("type: "+ type);
     switch (type) {
       case INT:
         program.set(name, (int)val);

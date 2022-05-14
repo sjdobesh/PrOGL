@@ -24,7 +24,6 @@ class Shader {
     this.w = w;
     this.h = h;
     program = loadShader(path);
-    println("Shader loaded...");
     make_default_uniforms();
     set_uniforms();
   }
@@ -33,7 +32,6 @@ class Shader {
     this.w = w;
     this.h = h;
     program = loadShader(path);
-    println("Shader loaded...");
     make_default_uniforms();
     add_uniform(u);
     set_uniforms();
@@ -42,7 +40,6 @@ class Shader {
     this.w = w;
     this.h = h;
     program = loadShader(path);
-    println("Shader loaded...");
     make_default_uniforms();
     add_uniforms(u);
     set_uniforms();
