@@ -25,13 +25,31 @@ class Shader {
     this.h = h;
     program = loadShader(path);
     println("Shader loaded...");
-    make_default_uniforms(w, h);
-    // make optional uniforms here
+    make_default_uniforms();
+    set_uniforms();
+  }
+  // make optional uniform(s)
+  Shader(String path, int w, int h, Uniform u) {
+    this.w = w;
+    this.h = h;
+    program = loadShader(path);
+    println("Shader loaded...");
+    make_default_uniforms();
+    add_uniform(u);
+    set_uniforms();
+  }
+  Shader(String path, int w, int h, ArrayList<Uniform> u) {
+    this.w = w;
+    this.h = h;
+    program = loadShader(path);
+    println("Shader loaded...");
+    make_default_uniforms();
+    add_uniforms(u);
     set_uniforms();
   }
 
   // just defaults
-  void make_default_uniforms(int w, int h) {
+  void make_default_uniforms() {
     // default time uniform
     Function<Float, Float> update_time = t -> (float)millis()/1000.0;
     uniforms.add(new Uniform(
@@ -51,11 +69,11 @@ class Shader {
     ));
     ArrayList<Float> mouse_pos =  new ArrayList<Float>();
     mouse_pos.add((float)mouseX);
-    mouse_pos.add((float)mouseY);
+    mouse_pos.add((float)(-1*mouseY + height));
     mouse_pos.add(mousePressed ? 1.0 : -1.0);
     Function<ArrayList<Float>, ArrayList<Float>> update_mouse = t -> {
       t.set(0, (float)mouseX);
-      t.set(1, (float)mouseY);
+      t.set(1, (float)(-1*mouseY + height));
       t.set(2, mousePressed ? 1.0 : -1.0);
       return t;
     };

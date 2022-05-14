@@ -7,7 +7,14 @@ Renderer r;
 
 void setup() {
   size(800, 800, P2D);
-  r = new Renderer("frag.glsl", width, height);
+  // to pass in a texture we can define it here
+  Uniform tex = new Uniform(
+    "tex",
+    new Texture("texture.jpg"),
+    uniform_type.TEXTURE
+  );
+
+  r = new Renderer("frag.glsl", width, height, tex);
 }
 
 void draw() {

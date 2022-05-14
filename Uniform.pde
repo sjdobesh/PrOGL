@@ -14,6 +14,7 @@ public static enum uniform_type {
   VEC2,
   VEC3,
   VEC4,
+  TEXTURE,
   MAT2,
   MAT3
 }
@@ -53,7 +54,6 @@ class Uniform<T> {
     }
   }
 
-
   // set this uniform within a given program
   void set_uniform(PShader program) {
     println("Setting uniform: "+ name);
@@ -92,6 +92,10 @@ class Uniform<T> {
           v4val.get(2),
           v4val.get(3)
         );
+        break;
+      case TEXTURE:
+        Texture tex = (Texture)val;
+        program.set(name, tex.img);
         break;
       default:
         println("[ERROR!] unrecognized uniform data type\n");

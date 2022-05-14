@@ -18,23 +18,20 @@ class Renderer {
     this.w = w;
     this.h = h;
   }
-  // optionally offset the renderer position
-  Renderer(String path, int w, int h, float x, float y) {
-    this.sh = new Shader(path, w, h);
-    this.surface = createGraphics(sh.w, sh.h, P2D);
-    this.pos = new PVector(x, y);
-  }
-  // or u can use a pre built shader
-  Renderer(Shader sh) {
-    this.sh = sh;
-    this.surface = createGraphics(sh.w, sh.h, P2D);
+  // optionally include uniform(s) to pass to shader
+  Renderer(String path, int w, int h, ArrayList<Uniform> uniforms) {
+    this.sh = new Shader(path, w, h, uniforms);
+    this.surface = createGraphics(w, h, P2D);
     this.pos = new PVector(0, 0);
+    this.w = w;
+    this.h = h;
   }
-  // again, optionally offset the renderer position
-  Renderer(Shader sh, float x, float y) {
-    this.sh = sh;
-    this.surface = createGraphics(sh.w, sh.h, P2D);
-    this.pos = new PVector(x, y);
+  Renderer(String path, int w, int h, Uniform uniform) {
+    this.sh = new Shader(path, w, h, uniform);
+    this.surface = createGraphics(w, h, P2D);
+    this.pos = new PVector(0, 0);
+    this.w = w;
+    this.h = h;
   }
 
   // draw the shader to the surface
