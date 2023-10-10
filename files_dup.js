@@ -1,6 +1,6 @@
 var files_dup =
 [
-    [ "PrOGL.pde", "PrOGL_8pde.html", null ],
+    [ "PrOGL.pde", "PrOGL_8pde.html", "PrOGL_8pde" ],
     [ "Renderer.pde", "Renderer_8pde.html", null ],
     [ "Shader.pde", "Shader_8pde.html", null ],
     [ "Texture.pde", "Texture_8pde.html", null ],
