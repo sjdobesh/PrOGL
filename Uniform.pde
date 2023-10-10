@@ -3,32 +3,43 @@
 // manages uniforms and updating
 //------------------------------------------------------------------------------
 
-// interface to store lambda expression
+/** interface to store lambda expression. */
 import java.util.function.Function;
 
-// quickly check a uniforms type
+/** uniform underlying data type. */
 public static enum uniform_type {
-  INT,
-  FLOAT,
-  BOOL,
-  VEC2,
-  VEC3,
-  VEC4,
-  TEXTURE,
-  MAT2,
-  MAT3
+  INT,     /**< integer */
+  FLOAT,   /**< float */
+  BOOL,    /**< boolean */
+  VEC2,    /**< 2D vector */
+  VEC3,    /**< 3D vector */
+  VEC4,    /**< 4D vector */
+  TEXTURE, /**< 2D texture */
+  MAT2,    /**< 2D matrix */
+  MAT3,    /**< 3D matrix */
+  MAT4     /**< 4D matrix */
 }
 
-// a single uniform and whether or not it needs updating
+/**
+ * organizes information for a single Uniform, including
+ * its underlying data type and update behavior.
+ */
 class Uniform<T> {
 
-  String name;
-  T val;
-  uniform_type type;
-  Function<T, T> update_function = t -> t; // update function must take what it returns
-  boolean update_flag;
+  String name;                             /**< name used to reference uniform */
+  T val;                                   /**< data value */
+  uniform_type type;                       /**< data type of the val member */
+  Function<T, T> update_function = t -> t; /**< a pass by value update function*/
+  boolean update_flag;                     /**< wether to update or not */
 
-  // constant uniform constructor
+  /**
+   * constant Uniform constructor.
+   * this constructor will initialize the uniform and set update_flag to false.
+   *
+   * @param name the Uniform name as referenced in the glsl shader code
+   * @param val the value to initialize the Uniform with
+   * @param type the data type of val
+   */
   Uniform(String name, T val, uniform_type type) {
     this.name = name;
     this.val = val;
@@ -36,7 +47,17 @@ class Uniform<T> {
     this.update_flag = false;
   }
 
-  // or optionally with an update function
+  /**
+   * updatable Uniform constructor.
+   * this constructor will initialize the uniform with an update_function, 
+   * setting update_flag to true.
+   *
+   * @param name the Uniform name as referenced in the glsl shader code
+   * @param val the value to initialize the Uniform with
+   * @param type the data type of val
+   * @param update_function a lambda function, taking, updating, and returning
+   * the data type of this Uniform.
+   */
   Uniform(String name, T val, uniform_type type, Function<T, T> update_function) {
     this.name = name;
     this.val = val;
@@ -45,7 +66,9 @@ class Uniform<T> {
     this.update_flag = true;
   }
 
-  // update uniform value
+  /**
+   * update a uniforms value if applicable, ie. `update_flag = true`.
+   */
   void update() {
     if (update_flag) {
       val = update_function.apply(val); // update function must take what it returns
@@ -54,7 +77,9 @@ class Uniform<T> {
     }
   }
 
-  // set this uniform within a given program
+  /**
+   * set this uniform within a given program.
+   */
   void set_uniform(PShader program) {
     switch (type) {
       case INT:
@@ -94,13 +119,16 @@ class Uniform<T> {
         Texture tex = (Texture)val;
         program.set(name, tex.img);
         break;
+      // TODO implement mat2-4
       default:
         println("[ERROR!] unrecognized uniform data type\n");
         break;
     }
   }
 
-  // print out data structure for debugging
+  /**
+   * print out data structure for debugging.
+   */
   void print() {
     println("Uniform "+name+":");
     println("- val    : "+val);

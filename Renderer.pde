@@ -9,25 +9,21 @@
  */
 class Renderer {
 
-  /** shader object */
-  Shader sh;
-  /** surface to render to */
-  PGraphics surface;
-  /** position withing the window */
-  PVector pos;
-  /** width and height to render the surface as*/
-  int w, h;
+  Shader sh;         /**< shader object */
+  PGraphics surface; /**< surface to render to */
+  PVector pos;       /**< position within the window */
+  int w;             /**< width to render the surface as */
+  int h;             /**< height to render the surface as */
 
-  // supply a shader and dimensions
-  // s = new Shader("frag.glsl", width, height);
   /**
-  * Renderer Constructor
-  *
-  * @param path relative path to shader file
-  * @param w width of surface in pixels
-  * @param h height of surface in pixels
-  * @return a Renderer object
-  */
+   * Renderer Constructor without Uniforms.
+   * This constructs the internal Shader object with only the default uniforms 
+   * time, resolution, and mouse.
+   *
+   * @param path relative path to shader file
+   * @param w width of surface in pixels
+   * @param h height of surface in pixels
+   */
   Renderer(String path, int w, int h) {
     this.sh = new Shader(path, w, h);
     this.surface = createGraphics(w, h, P2D);
@@ -35,16 +31,16 @@ class Renderer {
     this.w = w;
     this.h = h;
   }
-  // optionally include uniform(s) to pass to shader
   /**
-  * Renderer Constructor
-  *
-  * @param path relative path to shader file
-  * @param w width of surface in pixels
-  * @param h height of surface in pixels
-  * @param uniform uniform object to initialize with shader 
-  * @return a Renderer object
-  */
+   * Renderer Constructor with Uniform.
+   * This constructs the internal Shader object with the default uniforms
+   * along with whatever we add.
+   *
+   * @param path relative path to shader file
+   * @param w width of surface in pixels
+   * @param h height of surface in pixels
+   * @param uniform uniform object to initialize with shader 
+   */
   Renderer(String path, int w, int h, Uniform uniform) {
     this.sh = new Shader(path, w, h, uniform);
     this.surface = createGraphics(w, h, P2D);
@@ -53,14 +49,15 @@ class Renderer {
     this.h = h;
   }
   /**
-  * Renderer Constructor
-  *
-  * @param path relative path to shader file
-  * @param w width of surface in pixels
-  * @param h height of surface in pixels
-  * @param uniforms an ArrayList of uniform objects to initialize
-  * @return a Renderer object
-  */
+   * Renderer Constructor with Uniforms.
+   * This constructs the internal Shader object with default uniforms
+   * and a list of other user defined Uniforms.
+   *
+   * @param path relative path to shader file
+   * @param w width of surface in pixels
+   * @param h height of surface in pixels
+   * @param uniforms an ArrayList of uniform objects to initialize
+   */
   Renderer(String path, int w, int h, ArrayList<Uniform> uniforms) {
     this.sh = new Shader(path, w, h, uniforms);
     this.surface = createGraphics(w, h, P2D);
@@ -69,10 +66,9 @@ class Renderer {
     this.h = h;
   }
 
-  // draw the shader to the surface
   /**
-  * renders the shader to the surface
-  */
+   * renders the shader and then draws it to the surface.
+   */
   void render() {
     update();
     surface.beginDraw();
@@ -83,15 +79,15 @@ class Renderer {
   }
 
   /**
-  * self update uniforms 
-  */
+   * attempts to update all updatable internal Uniforms.
+   */
   void update() {
     sh.update_uniforms();
   }
 
   /**
-  * print shader data 
-  */
+   * print Renderer class data for debugging purposes.
+   */
   void print() {
     println("Renderer:");
     println("- shader   : " + sh);
