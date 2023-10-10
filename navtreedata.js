@@ -24,12 +24,16 @@
 */
 var NAVTREE =
 [
-  [ "PrOGL", "index.html", ]
+  [ "PrOGL", "index.html", [
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ]
+    ] ]
+  ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"index.html"
+"PrOGL_8pde.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
