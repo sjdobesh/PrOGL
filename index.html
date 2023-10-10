@@ -99,22 +99,26 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   <div class="headertitle"><div class="title">PrOGL </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__2github_2workspace_2readme"></a><em>Processing Open-GL Interface</em></p>
-<p>PrOGL is an object oriented OpenGL rendering interface that provides utilities that handle</p><ul>
+<div class="textblock"><p><a class="anchor" id="md__2github_2workspace_2readme"></a><em>Processing Open-GL</em></p>
+<p>PrOGL is an object oriented OpenGL rendering interface that provides utilities for</p><ul>
 <li>compiling shaders</li>
-<li>setting and updating uniforms</li>
-<li>drawing multiple shaders to the screen</li>
+<li>managing uniform binding and updating</li>
+<li>drawing multiple shaders to the screen at once</li>
 </ul>
+<p>full documentation can be found <a href="https://sjdobesh.github.io/PrOGL/">here</a></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 usage</h1>
 <p>clone and run as a sketch with <a href="https://processing.org/">Processing</a>.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 example</h1>
 <p>running a fragment shader that requires no custom uniforms. time, resolution, and mouse are default uniforms.</p>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="PrOGL_8pde.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a>() {</div>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classRenderer.html">Renderer</a> <a class="code hl_variable" href="PrOGL_8pde.html#a354e6cf792e1f09a23c4db44dc7d748e">r</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="PrOGL_8pde.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a>() {</div>
 <div class="line">  size(100, 100, P2D);</div>
 <div class="line">  <a class="code hl_variable" href="PrOGL_8pde.html#a354e6cf792e1f09a23c4db44dc7d748e">r</a> = <span class="keyword">new</span> <a class="code hl_class" href="classRenderer.html">Renderer</a>(<span class="stringliteral">&quot;frag.glsl&quot;</span>, width, height);</div>
 <div class="line">}</div>
+<div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="PrOGL_8pde.html#a56c5cf8a568cff737ff95520cbe6b405">draw</a>() {</div>
 <div class="line">  <a class="code hl_variable" href="PrOGL_8pde.html#a354e6cf792e1f09a23c4db44dc7d748e">r</a>.<a class="code hl_function" href="classRenderer.html#ae224c48f2fc0fa763870beacb07eacb5">render</a>();</div>
 <div class="line">}</div>
