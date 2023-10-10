@@ -1,24 +1,28 @@
 # PrOGL
-*Processing Open-GL Interface*
+*Processing Open-GL*
 
-PrOGL is an object oriented OpenGL rendering interface that provides utilities that handle
+PrOGL is an object oriented OpenGL rendering interface that provides utilities for
 - compiling shaders
-- setting and updating uniforms
-- drawing multiple shaders to the screen
+- managing uniform binding and updating
+- drawing multiple shaders to the screen at once
+
+full documentation can be found [here](https://sjdobesh.github.io/PrOGL/)
 
 ## usage
 clone and run as a sketch with [Processing](https://processing.org/).
-
 
 ## example
 running a fragment shader that requires no custom uniforms.
 time, resolution, and mouse are default uniforms.
 
 ```java
+Renderer r;
+
 void setup() {
   size(100, 100, P2D);
   r = new Renderer("frag.glsl", width, height);
 }
+
 void draw() {
   r.render();
 }
