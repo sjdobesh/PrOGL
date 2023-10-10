@@ -94,27 +94,45 @@ $(document).ready(function(){initNavTree('PrOGL_8pde_source.html',''); initResiz
 <div class="contents">
 <a href="PrOGL_8pde.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// progl.pde</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// samantha jane</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// processing glsl host</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// processing glsl interface</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;Renderer r;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordtype">void</span> setup() {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  size(800, 800, P2D);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="comment">// set custom uniforms as follows</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  Uniform tex = <span class="keyword">new</span> Uniform(</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="stringliteral">&quot;tex&quot;</span>,</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">new</span> Texture(<span class="stringliteral">&quot;texture.jpg&quot;</span>),</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    uniform_type.TEXTURE</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  );</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment">// set renderer</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  r = <span class="keyword">new</span> Renderer(<span class="stringliteral">&quot;frag.glsl&quot;</span>, width, height, tex);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> draw() {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  r.render();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/** global renderer object that renders to the entire size of the screen */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="PrOGL_8pde.html#a354e6cf792e1f09a23c4db44dc7d748e">    7</a></span>&#160;<a class="code" href="classRenderer.html">Renderer</a> <a class="code" href="PrOGL_8pde.html#a354e6cf792e1f09a23c4db44dc7d748e">r</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">* setup is in charge of creating the window and initializing a Renderer object,</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">* along with any uniforms our shader requires.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="PrOGL_8pde.html#a4fc01d736fe50cf5b977f755b675f11d">   13</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="PrOGL_8pde.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a>() {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  size(800, 800, P2D);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="comment">// set custom uniforms as follows</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="classUniform.html">Uniform</a> tex = <span class="keyword">new</span> <a class="code" href="classUniform.html">Uniform</a>(</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="stringliteral">&quot;tex&quot;</span>,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">new</span> <a class="code" href="classTexture.html">Texture</a>(<span class="stringliteral">&quot;texture.jpg&quot;</span>),</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="enumuniform__type.html">uniform_type</a>.<a class="code" href="enumuniform__type.html#a921b4670c582c8d43b532187d4129aeb">TEXTURE</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  );</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="comment">// set renderer</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="PrOGL_8pde.html#a354e6cf792e1f09a23c4db44dc7d748e">r</a> = <span class="keyword">new</span> <a class="code" href="classRenderer.html">Renderer</a>(<span class="stringliteral">&quot;frag.glsl&quot;</span>, width, height, tex);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">* draw continuously calls render every frame,</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">* updating uniform values and progressing the shader.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="PrOGL_8pde.html#a56c5cf8a568cff737ff95520cbe6b405">   30</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="PrOGL_8pde.html#a56c5cf8a568cff737ff95520cbe6b405">draw</a>() {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="PrOGL_8pde.html#a354e6cf792e1f09a23c4db44dc7d748e">r</a>.<a class="code" href="classRenderer.html#ae224c48f2fc0fa763870beacb07eacb5">render</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="ttc" id="aPrOGL_8pde_html_a354e6cf792e1f09a23c4db44dc7d748e"><div class="ttname"><a href="PrOGL_8pde.html#a354e6cf792e1f09a23c4db44dc7d748e">r</a></div><div class="ttdeci">Renderer r</div><div class="ttdoc">global renderer object that renders to the entire size of the screen</div><div class="ttdef"><b>Definition:</b> <a href="PrOGL_8pde_source.html#l00007">PrOGL.pde:7</a></div></div>
+<div class="ttc" id="aPrOGL_8pde_html_a4fc01d736fe50cf5b977f755b675f11d"><div class="ttname"><a href="PrOGL_8pde.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a></div><div class="ttdeci">void setup()</div><div class="ttdoc">setup is in charge of creating the window and initializing a Renderer object, along with any uniforms...</div><div class="ttdef"><b>Definition:</b> <a href="PrOGL_8pde_source.html#l00013">PrOGL.pde:13</a></div></div>
+<div class="ttc" id="aPrOGL_8pde_html_a56c5cf8a568cff737ff95520cbe6b405"><div class="ttname"><a href="PrOGL_8pde.html#a56c5cf8a568cff737ff95520cbe6b405">draw</a></div><div class="ttdeci">void draw()</div><div class="ttdoc">draw continuously calls render every frame, updating uniform values and progressing the shader.</div><div class="ttdef"><b>Definition:</b> <a href="PrOGL_8pde_source.html#l00030">PrOGL.pde:30</a></div></div>
+<div class="ttc" id="aclassRenderer_html"><div class="ttname"><a href="classRenderer.html">Renderer</a></div><div class="ttdoc">PrOGL renderer.</div><div class="ttdef"><b>Definition:</b> <a href="Renderer_8pde_source.html#l00010">Renderer.pde:10</a></div></div>
+<div class="ttc" id="aclassRenderer_html_ae224c48f2fc0fa763870beacb07eacb5"><div class="ttname"><a href="classRenderer.html#ae224c48f2fc0fa763870beacb07eacb5">Renderer.render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">renders the shader and then draws it to the surface.</div><div class="ttdef"><b>Definition:</b> <a href="Renderer_8pde_source.html#l00072">Renderer.pde:72</a></div></div>
+<div class="ttc" id="aclassTexture_html"><div class="ttname"><a href="classTexture.html">Texture</a></div><div class="ttdoc">the Texture class serves a wrapper for a PImage and image path.</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8pde_source.html#l00009">Texture.pde:9</a></div></div>
+<div class="ttc" id="aclassUniform_html"><div class="ttname"><a href="classUniform.html">Uniform</a></div><div class="ttdoc">organizes information for a single Uniform, including its underlying data type and update behavior.</div><div class="ttdef"><b>Definition:</b> <a href="Uniform_8pde_source.html#l00027">Uniform.pde:27</a></div></div>
+<div class="ttc" id="aenumuniform__type_html"><div class="ttname"><a href="enumuniform__type.html">uniform_type</a></div><div class="ttdoc">uniform underlying data type.</div><div class="ttdef"><b>Definition:</b> <a href="Uniform_8pde_source.html#l00010">Uniform.pde:10</a></div></div>
+<div class="ttc" id="aenumuniform__type_html_a921b4670c582c8d43b532187d4129aeb"><div class="ttname"><a href="enumuniform__type.html#a921b4670c582c8d43b532187d4129aeb">uniform_type.TEXTURE</a></div><div class="ttdeci">TEXTURE</div><div class="ttdoc">2D texture</div><div class="ttdef"><b>Definition:</b> <a href="Uniform_8pde_source.html#l00017">Uniform.pde:17</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

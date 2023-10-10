@@ -88,12 +88,132 @@ $(document).ready(function(){initNavTree('PrOGL_8pde.html',''); initResizable();
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">PrOGL.pde File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p><a href="PrOGL_8pde_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PrOGL_8pde.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
+<tr class="memdesc:a4fc01d736fe50cf5b977f755b675f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">setup is in charge of creating the window and initializing a <a class="el" href="classRenderer.html" title="PrOGL renderer.">Renderer</a> object, along with any uniforms our shader requires.  <a href="PrOGL_8pde.html#a4fc01d736fe50cf5b977f755b675f11d">More...</a><br /></td></tr>
+<tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56c5cf8a568cff737ff95520cbe6b405"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PrOGL_8pde.html#a56c5cf8a568cff737ff95520cbe6b405">draw</a> ()</td></tr>
+<tr class="memdesc:a56c5cf8a568cff737ff95520cbe6b405"><td class="mdescLeft">&#160;</td><td class="mdescRight">draw continuously calls render every frame, updating uniform values and progressing the shader.  <a href="PrOGL_8pde.html#a56c5cf8a568cff737ff95520cbe6b405">More...</a><br /></td></tr>
+<tr class="separator:a56c5cf8a568cff737ff95520cbe6b405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a354e6cf792e1f09a23c4db44dc7d748e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRenderer.html">Renderer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PrOGL_8pde.html#a354e6cf792e1f09a23c4db44dc7d748e">r</a></td></tr>
+<tr class="memdesc:a354e6cf792e1f09a23c4db44dc7d748e"><td class="mdescLeft">&#160;</td><td class="mdescRight">global renderer object that renders to the entire size of the screen  <a href="PrOGL_8pde.html#a354e6cf792e1f09a23c4db44dc7d748e">More...</a><br /></td></tr>
+<tr class="separator:a354e6cf792e1f09a23c4db44dc7d748e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a56c5cf8a568cff737ff95520cbe6b405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56c5cf8a568cff737ff95520cbe6b405">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>draw continuously calls render every frame, updating uniform values and progressing the shader. </p>
+
+<p class="definition">Definition at line <a class="el" href="PrOGL_8pde_source.html#l00030">30</a> of file <a class="el" href="PrOGL_8pde_source.html">PrOGL.pde</a>.</p>
+
+<p class="reference">References <a class="el" href="PrOGL_8pde_source.html#l00007">r</a>, and <a class="el" href="Renderer_8pde_source.html#l00072">Renderer.render()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="PrOGL_8pde_a56c5cf8a568cff737ff95520cbe6b405_cgraph.png" border="0" usemap="#aPrOGL_8pde_a56c5cf8a568cff737ff95520cbe6b405_cgraph" alt=""/></div>
+<map name="aPrOGL_8pde_a56c5cf8a568cff737ff95520cbe6b405_cgraph" id="aPrOGL_8pde_a56c5cf8a568cff737ff95520cbe6b405_cgraph">
+<area shape="rect" title="draw continuously calls render every frame, updating uniform values and progressing the shader." alt="" coords="5,5,60,32"/>
+<area shape="rect" href="classRenderer.html#ae224c48f2fc0fa763870beacb07eacb5" title="renders the shader and then draws it to the surface." alt="" coords="108,5,235,32"/>
+<area shape="rect" href="classRenderer.html#ac6530adef6301d871611ce9aaaaedb34" title="attempts to update all updatable internal Uniforms." alt="" coords="283,5,412,32"/>
+<area shape="rect" href="classShader.html#a0f824bb72644afcb244cde4413fd4e6b" title="update uniforms with an update function." alt="" coords="460,5,640,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4fc01d736fe50cf5b977f755b675f11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc01d736fe50cf5b977f755b675f11d">&#9670;&nbsp;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>setup is in charge of creating the window and initializing a <a class="el" href="classRenderer.html" title="PrOGL renderer.">Renderer</a> object, along with any uniforms our shader requires. </p>
+
+<p class="definition">Definition at line <a class="el" href="PrOGL_8pde_source.html#l00013">13</a> of file <a class="el" href="PrOGL_8pde_source.html">PrOGL.pde</a>.</p>
+
+<p class="reference">References <a class="el" href="PrOGL_8pde_source.html#l00007">r</a>, and <a class="el" href="Uniform_8pde_source.html#l00017">uniform_type.TEXTURE</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a354e6cf792e1f09a23c4db44dc7d748e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a354e6cf792e1f09a23c4db44dc7d748e">&#9670;&nbsp;</a></span>r</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRenderer.html">Renderer</a> r</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>global renderer object that renders to the entire size of the screen </p>
+
+<p class="definition">Definition at line <a class="el" href="PrOGL_8pde_source.html#l00007">7</a> of file <a class="el" href="PrOGL_8pde_source.html">PrOGL.pde</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

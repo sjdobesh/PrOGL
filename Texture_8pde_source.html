@@ -96,16 +96,27 @@ $(document).ready(function(){initNavTree('Texture_8pde_source.html',''); initRes
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// samantha jane</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// texture wrapper code</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span>Texture {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  PImage img;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  String name;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">public</span> Texture(String name) {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    this.name = name;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    this.img = loadImage(name);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * the Texture class serves a wrapper for a PImage and image path.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classTexture.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTexture.html">Texture</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classTexture.html#ac3f9fdda3fbbb2bbcdb3b9b4a53c42f0">   10</a></span>&#160;  PImage <a class="code" href="classTexture.html#ac3f9fdda3fbbb2bbcdb3b9b4a53c42f0">img</a>;  <span class="comment">/**&lt; image once loaded into memory */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classTexture.html#a5622e8f66e8579ccd71680fc8981ba2f">   11</a></span>&#160;  String <a class="code" href="classTexture.html#a5622e8f66e8579ccd71680fc8981ba2f">name</a>; <span class="comment">/**&lt; relative path to image file */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">  /**</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">   * Texture constructor.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   * loads an image from the supplied path.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classTexture.html#aa8f993dbae54452b639ee5780a9712d3">   17</a></span>&#160;  <span class="keyword">public</span> <a class="code" href="classTexture.html#aa8f993dbae54452b639ee5780a9712d3">Texture</a>(String <a class="code" href="classTexture.html#a5622e8f66e8579ccd71680fc8981ba2f">name</a>) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    this.name = <a class="code" href="classTexture.html#a5622e8f66e8579ccd71680fc8981ba2f">name</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    this.img = loadImage(<a class="code" href="classTexture.html#a5622e8f66e8579ccd71680fc8981ba2f">name</a>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="ttc" id="aclassTexture_html"><div class="ttname"><a href="classTexture.html">Texture</a></div><div class="ttdoc">the Texture class serves a wrapper for a PImage and image path.</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8pde_source.html#l00009">Texture.pde:9</a></div></div>
+<div class="ttc" id="aclassTexture_html_a5622e8f66e8579ccd71680fc8981ba2f"><div class="ttname"><a href="classTexture.html#a5622e8f66e8579ccd71680fc8981ba2f">Texture.name</a></div><div class="ttdeci">String name</div><div class="ttdoc">relative path to image file</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8pde_source.html#l00011">Texture.pde:11</a></div></div>
+<div class="ttc" id="aclassTexture_html_aa8f993dbae54452b639ee5780a9712d3"><div class="ttname"><a href="classTexture.html#aa8f993dbae54452b639ee5780a9712d3">Texture.Texture</a></div><div class="ttdeci">Texture(String name)</div><div class="ttdoc">Texture constructor.</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8pde_source.html#l00017">Texture.pde:17</a></div></div>
+<div class="ttc" id="aclassTexture_html_ac3f9fdda3fbbb2bbcdb3b9b4a53c42f0"><div class="ttname"><a href="classTexture.html#ac3f9fdda3fbbb2bbcdb3b9b4a53c42f0">Texture.img</a></div><div class="ttdeci">PImage img</div><div class="ttdoc">image once loaded into memory</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8pde_source.html#l00010">Texture.pde:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
