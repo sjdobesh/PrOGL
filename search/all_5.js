@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['img_7',['img',['../classTexture.html#ac3f9fdda3fbbb2bbcdb3b9b4a53c42f0',1,'Texture']]],
-  ['int_8',['INT',['../enumuniform__type.html#aa6c99665639a3416ed829fa4575e0770',1,'uniform_type']]]
+  ['h_0',['h',['../classRenderer.html#a92c31e1887f40037e5e9c973636afa1a',1,'Renderer.h'],['../classShader.html#a913a139ec52fe4c7d9d6bb9f3962a7cd',1,'Shader.h']]]
 ];

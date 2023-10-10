@@ -1,0 +1,9 @@
+<map id="Shader.Shader" name="Shader.Shader">
+<area shape="rect" id="Node000001" title="Shader Constructor with Uniform." alt="" coords="5,63,112,88"/>
+<area shape="rect" id="Node000002" href="$classShader.html#ae819e4b3c310f4fe2cafce24a3bcb311" title="add a single uniform." alt="" coords="163,5,300,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,60,175,34,177,39,101,65"/>
+<area shape="rect" id="Node000003" href="$classShader.html#a17342388f2f3e56f880f715152d05c88" title="this creates three common uniforms as defaults." alt="" coords="160,55,303,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,73,144,73,144,78,112,78"/>
+<area shape="rect" id="Node000004" href="$classShader.html#a62a4278af895311f3821b0c6a8dc3f75" title="set uniforms in shader." alt="" coords="161,120,302,146"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="101,86,177,112,175,117,99,91"/>
+</map>

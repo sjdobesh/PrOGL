@@ -1,0 +1,9 @@
+<map id="draw" name="draw">
+<area shape="rect" id="Node000001" title="draw continuously calls render every frame, updating uniform values and progressing the shader." alt="" coords="5,5,55,31"/>
+<area shape="rect" id="Node000002" href="$classRenderer.html#ae224c48f2fc0fa763870beacb07eacb5" title="renders the shader and then draws it to the surface." alt="" coords="103,5,215,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,16,87,16,87,21,55,21"/>
+<area shape="rect" id="Node000003" href="$classRenderer.html#ac6530adef6301d871611ce9aaaaedb34" title="attempts to update all updatable internal Uniforms." alt="" coords="263,5,378,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="215,16,248,16,248,21,215,21"/>
+<area shape="rect" id="Node000004" href="$classShader.html#a0f824bb72644afcb244cde4413fd4e6b" title="update uniforms with an update function." alt="" coords="426,5,588,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="379,16,411,16,411,21,379,21"/>
+</map>

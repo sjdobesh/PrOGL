@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['h_6',['h',['../classRenderer.html#a92c31e1887f40037e5e9c973636afa1a',1,'Renderer.h()'],['../classShader.html#a913a139ec52fe4c7d9d6bb9f3962a7cd',1,'Shader.h()']]]
+  ['float_0',['FLOAT',['../enumuniform__type.html#a38539c8a66133b2e45950dc7312bae1b',1,'uniform_type']]],
+  ['frag_1',['FRAG',['../enumshader__type.html#aefedf9b404ec4a8008af5cf3e96631bc',1,'shader_type']]]
 ];
