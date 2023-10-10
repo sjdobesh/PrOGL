@@ -8,18 +8,37 @@ import java.util.function.Function;
 import java.util.Collections;
 
 // enums for unforms and shader type
+/**
+* shader enum
+*/
 public static enum shader_type {
+  /** vertex shader */
   VERT,
+  /** fragment shader */
   FRAG
 }
 
 // shader class holding type and uniform information
+/**
+* Shader object organizes a list of uniforms and a compiled PShader.
+*/
 class Shader {
+  /** OpenGL program binding */
   PShader program;
+  /** Shader type (vertex or fragment) */
   shader_type type;
+  /** Uniform data */
   ArrayList<Uniform> uniforms = new ArrayList<Uniform>();
+  /** width and height */
   int w, h;
 
+  /** Shader Constructor.
+  *
+  * @param path relative path to shader text file
+  * @param w width of shader 
+  * @param h height of shader 
+  * @return a Shader object
+  */
   Shader(String path, int w, int h) {
     this.w = w;
     this.h = h;
@@ -27,7 +46,14 @@ class Shader {
     make_default_uniforms();
     set_uniforms();
   }
-  // make optional uniform(s)
+  /** Shader Constructor.
+  *
+  * @param path relative path to shader text file
+  * @param w width of shader 
+  * @param h height of shader 
+  * @param u Uniform object to add to list 
+  * @return a Shader object
+  */
   Shader(String path, int w, int h, Uniform u) {
     this.w = w;
     this.h = h;
@@ -36,6 +62,14 @@ class Shader {
     add_uniform(u);
     set_uniforms();
   }
+  /** Shader Constructor.
+  *
+  * @param path relative path to shader text file
+  * @param w width of shader 
+  * @param h height of shader 
+  * @param u an ArrayList of Uniform objects to add to the shader
+  * @return a Shader object
+  */
   Shader(String path, int w, int h, ArrayList<Uniform> u) {
     this.w = w;
     this.h = h;
